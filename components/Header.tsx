@@ -11,7 +11,7 @@ const Header = () => {
   return (
     <div className="flex justify-between items-center p-5">
         {user && (
-            <h1 className="text-2xl">{user?.firstName} {`'s`} Space</h1>
+            <h1 className="text-2xl line-clamp-1 ">{user?.firstName} {`'s`} Space</h1>
         )}
 
         <Breadcrumbs /> 

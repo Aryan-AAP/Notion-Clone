@@ -16,7 +16,7 @@ const Breadcrumbs = () => {
     const segments=path.split('/');
     
   return (
-<Breadcrumb>
+<Breadcrumb className="line-clamp-1 max-md:hidden   " >
   <BreadcrumbList>
     <BreadcrumbItem>
       <BreadcrumbLink href="/">Home</BreadcrumbLink>
