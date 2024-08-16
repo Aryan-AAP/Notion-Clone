@@ -12,8 +12,7 @@ export const metadata: Metadata = {
   description: "Made with Next.js ",
   icons:'/AryanAAP.png',
   authors: [{ name: "Aryan Pardeshi" }],
-  
-  
+
 
 
 };
@@ -26,9 +25,13 @@ export default function RootLayout({
   return (
     <ClerkProvider>
 
+
+
+
     <html lang="en">
       <head>
-
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2344515996464290"
+     crossOrigin="anonymous"></script>
       </head>
       <body >
         <Header/>
@@ -42,9 +45,12 @@ export default function RootLayout({
 </div>
         </div>
         <Toaster position="top-center" />
-
+      
         </body>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2344515996464290"
+     crossOrigin="anonymous"></script>
     </html>
+    {/* </TerminalContextProvider> */}
     </ClerkProvider>
   );
 }

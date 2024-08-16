@@ -5,7 +5,10 @@ const DocLayout = ({children,params:{id}}: {children: React.ReactNode ,params:{i
     auth().protect();
   return (
     <RoomProvider roomId={id}>
+ 
+
         {children}
+
     </RoomProvider>
   )
 }
