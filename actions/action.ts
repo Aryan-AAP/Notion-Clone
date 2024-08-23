@@ -1,5 +1,7 @@
 'use server'
 
+import { Language } from "@/components/compiler/CompilerCode";
+import { CODE_SNIPPETS } from "@/constants/editor";
 import { adminDb } from "@/firebase-admin";
 import liveblocks from "@/lib/liveblocks";
 import { auth } from "@clerk/nextjs/server"
@@ -84,4 +86,10 @@ export async function removeUserFromDocument(roomId:string,email:string) {
         return {success:false}
         
     }
+}
+export async function addthecodeintoroom(value: string, roomId: string, language: string) {
+    auth().protect();
+
+    adminDb.collection('documents').doc(roomId).set({ [language] :value}, { merge: true })
+    
 }

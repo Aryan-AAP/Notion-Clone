@@ -12,14 +12,16 @@ import DeleteDocument from "./DeleteDocument";
 import InviteUser from "./InviteUser";
 import ManageUsers from "./ManageUsers";
 import Avatars from "./Avatars";
-import CompilerCode from "./compiler/CompilerCode";
+// import CompilerCode from "./compiler/CompilerCode";
 import {
   ResizableHandle,
   ResizablePanel,
   ResizablePanelGroup,
 } from "@/components/ui/resizable"
+import CompilerCode from "./compiler/CompilerCode";
 
 const Document = ({ id }: { id: string }) => {
+  
   const [data, loading, error] = useDocumentData(doc(db, "documents", id));
   const [input, setInput] = useState("");
   // useTransition
