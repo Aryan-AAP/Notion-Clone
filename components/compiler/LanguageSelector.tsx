@@ -12,8 +12,8 @@
   
   const LanguageSelector = ({ language, onSelect }: { language: string; onSelect: (lang: string) => void }) => {
     return (
-      <div className="ml-2 mb-4">
-        <p className="mb-2 text-lg">Language:</p>
+      <div className="ml-2 mb-4 gap-2 flex flex-row ">
+        <p className="font-extrabold pt-1  text-lg">Language : </p>
         <Select onValueChange={onSelect} value={language}>
           <SelectTrigger className="w-[180px] px-4 py-2 text-white bg-gray-800 rounded-md shadow hover:bg-gray-700">
             <SelectValue placeholder={language} />

@@ -99,7 +99,12 @@ summary && console.log(summary)
     <Button asChild variant={"outline"}>
       <DialogTrigger>
         <LanguagesIcon/>
-        Translate </DialogTrigger>
+        
+
+        <div className="hidden md:block  " >
+        Translate
+        </div>
+         </DialogTrigger>
     </Button>
     <DialogContent>
       <DialogHeader>

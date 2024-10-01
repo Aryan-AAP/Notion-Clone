@@ -62,8 +62,10 @@ startTransition(async () => {
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <Button asChild variant={"outline"}>
         <DialogTrigger>
-          <MessageCircleCode className="mr-2" />
-          Chat to Document
+          <MessageCircleCode className="  " />
+       <div className="hidden md:block  " >
+           Chat to Document
+        </div>
           
            </DialogTrigger>
       </Button>

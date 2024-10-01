@@ -7,6 +7,7 @@ import liveblocks from "@/lib/liveblocks";
 import { auth } from "@clerk/nextjs/server"
 
 export async function createNewDocument() {
+   
     auth().protect();const {sessionClaims}=await auth();
 
     const docCollectionRef=adminDb.collection("documents")
@@ -92,4 +93,7 @@ export async function addthecodeintoroom(value: string, roomId: string, language
 
     adminDb.collection('documents').doc(roomId).set({ [language] :value}, { merge: true })
     
+}
+export async function addUsernameandpassword(){
+
 }

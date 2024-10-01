@@ -7,7 +7,7 @@ import Link from "next/link";
 const Header = () => {
 
     const {user}=useUser();
-
+if(!user)return null
 
   return (
     <div className="flex justify-between items-center p-5">

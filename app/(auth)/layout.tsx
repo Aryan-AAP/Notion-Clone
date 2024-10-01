@@ -9,8 +9,8 @@ export default function RootLayout({
 }>) {
   return (
     <main className="relative flex  h-screen w-full">
-    <div className="absolute flex justify-center items-center size-full " >
-<Image src="/AryanAAP.png" alt="BACKGROUND" fill className="" />
+    <div className="flex justify-center items-center size-full " >
+<Image src="/logo.jpg" alt="BACKGROUND" fill className="" />
         {children} 
     </div>
 

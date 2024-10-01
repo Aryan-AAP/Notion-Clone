@@ -9,6 +9,8 @@ import { useDocumentData } from "react-firebase-hooks/firestore";
 import { doc } from "firebase/firestore";
 import { db } from "@/firebase";
 import { useRoom } from "@liveblocks/react/suspense";
+import { Button } from "../ui/button";
+
 
 // Define the type for languages based on CODE_SNIPPETS keys
 export type Language = keyof typeof CODE_SNIPPETS;
@@ -42,10 +44,20 @@ function CompilerCode() {
   };
 
   return (
-    <div className="flex flex-col p-4">
-      <div className="flex space-x-4">
-        <div className="w-1/2">
+    <div className="flex flex-1 flex-col ">
+      {/* <Trying /> */}
+      <div className="flex  flex-1 flex-col">
+        <div className="w-full  ">
+          <div 
+          className="flex justify-between "
+          >
+            <div>
+
           <LanguageSelector language={language} onSelect={onSelect} />
+            </div>
+
+          </div>
+
           <Editor
             options={{
               selectOnLineNumbers: true,
@@ -82,7 +94,7 @@ function CompilerCode() {
             onChange={(value) => setValue(value || "")}
           />
         </div>
-        <div className="flex-1">
+        <div className="flex-1 ">
           <Output editorRef={editorRef} language={language} />
         </div>
       </div>

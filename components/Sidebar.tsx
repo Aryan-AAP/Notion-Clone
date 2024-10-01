@@ -27,6 +27,8 @@ interface RoomDocument extends DocumentData {
   role: "owner" | "editor";
 }
 const Sidebar = () => {
+  const { user } = useUser();
+  // if(!user)return 
   const [groupedData, setGroupedData] = useState<{
     owner: RoomDocument[];
     editor: RoomDocument[];
@@ -34,7 +36,7 @@ const Sidebar = () => {
     owner: [],
     editor: [],
   });
-  const { user } = useUser();
+ 
   const [data, loading, error] = useCollection(
     user &&
     query(
@@ -122,7 +124,7 @@ My Documents
 
     setGroupedData(grouped);
   }, [data]);
-
+if(!user) return null
   return (
     <div className="p-2 md:p-5 bg-gray-200 relative ">
       <div className="md:hidden ">

@@ -1,4 +1,5 @@
 "use client";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
 import { FormEvent, useEffect, useState, useTransition } from "react";
 import { Input } from "./ui/input";
@@ -12,6 +13,7 @@ import DeleteDocument from "./DeleteDocument";
 import InviteUser from "./InviteUser";
 import ManageUsers from "./ManageUsers";
 import Avatars from "./Avatars";
+import Cloudd from "@/components/cloud/Cloudd";
 // import CompilerCode from "./compiler/CompilerCode";
 import {
   ResizableHandle,
@@ -77,8 +79,9 @@ const Document = ({ id }: { id: string }) => {
       </div>
 <hr  className="pb-10"/>
       
- 
-<ResizablePanelGroup className="flex-1" direction={`horizontal`} >
+ <div className=" hidden lg:block" >
+
+<ResizablePanelGroup className="flex-1 "   direction={`horizontal`} >
   <ResizablePanel>
      
       {/* collaborative editor */}
@@ -88,11 +91,31 @@ const Document = ({ id }: { id: string }) => {
   <ResizablePanel>
         
 {/* coode part from here  */}
-<CompilerCode />
+{/* <CompilerCode /> */}
+<Cloudd />
+
   </ResizablePanel>
 </ResizablePanelGroup>
+ </div>
 
+<div className=" lg:hidden ">
+<Tabs defaultValue="account" className="w-full">
+<div className="flex p-2 justify-center " >
+    <TabsList className="flex justify-center gap-4   max-w-[400px] " >
+    <TabsTrigger value="account">White Board </TabsTrigger>
+    <TabsTrigger value="password">Editor</TabsTrigger>
+  </TabsList>
+  </div>
+  <TabsContent value="account">
+  <Editor />
+    
+  </TabsContent>
+  <TabsContent value="password">
+  <CompilerCode />
+  </TabsContent>
+</Tabs>
 
+</div>
 
 
 

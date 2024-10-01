@@ -5,7 +5,8 @@ import axios from "axios";
 import { CODE_SNIPPETS } from "@/constants/editor";
 import { db } from "@/firebase";
 import { addthecodeintoroom } from "@/actions/action";
-type lol = keyof typeof CODE_SNIPPETS;
+import { Button } from "../ui/button";
+export type lol = keyof typeof CODE_SNIPPETS;
 
 const LANGUAGE_VERSIONS = {
   javascript: "18.15.0",
@@ -45,7 +46,7 @@ const Output: React.FC<OutputProps> = ({ editorRef, language }) => {
   const [isError, setIsError] = useState(false);
   const room=useRoom()
 
-  const runCode = async (language: lol) => {
+    const runCode = async (language: lol) => {
     const sourceCode = editorRef.current?.getValue();
     if (!sourceCode) return;
 console.log(language);
@@ -67,9 +68,9 @@ console.log(language);
   };
 
   return (
-    <div className="w-1/2">
+    <div className="w-full">
       <p className="mb-2 text-lg">Output</p>
-      <button
+      <Button
         className={`mb-4 px-4 py-2 text-white bg-green-500 rounded hover:bg-green-600 ${
           isLoading ? "opacity-50 cursor-not-allowed" : ""
         }`}
@@ -77,7 +78,7 @@ console.log(language);
         disabled={isLoading}
       >
         {isLoading ? "Running..." : "Run Code"}
-      </button>
+      </Button>
       <div
         className={`h-[75vh] p-2 border rounded ${
           isError ? "text-red-400 border-red-500" : "border-gray-800"
