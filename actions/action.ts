@@ -94,6 +94,13 @@ export async function addthecodeintoroom(value: string, roomId: string, language
     adminDb.collection('documents').doc(roomId).set({ [language] :value}, { merge: true })
     
 }
-export async function addUsernameandpassword(){
+export async function addUsernameandpassword(roomId:string,username:string,password:string) {
+    auth().protect();
+    
+
+    adminDb.collection('documents').doc(roomId).set(
+        // {username:'admin',password:'admin'},{merge:true}
+        {username,password},{merge:true}
+    )
 
 }
